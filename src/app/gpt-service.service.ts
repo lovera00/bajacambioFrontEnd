@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GptServiceService {
-  private apiUrl = 'http://localhost:3000/chatgpt'; // La URL de tu API
+  private apiUrl = 'https://bajadordecambiosbackend-production.up.railway.app/chatgpt'; // La URL de tu API
 
   constructor(private http: HttpClient) { }
 

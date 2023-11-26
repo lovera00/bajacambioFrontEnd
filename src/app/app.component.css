@@ -1,0 +1,60 @@
+.form-container {
+    margin: auto;
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    resize: vertical;
+    box-sizing: border-box; /* Asegura que padding y border estén incluidos en el ancho total */
+  }
+  
+  button {
+    display: block; /* Hace que el botón se extienda a lo largo de la pantalla */
+    width: 100%;
+    background-color: #008cba;
+    color: white;
+    padding: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #005f73;
+  }
+  
+  /* Media queries para adaptarse a pantallas más pequeñas */
+  @media (max-width: 767px) {
+    .form-container {
+      padding: 15px;
+      margin: 15px;
+    }
+  
+    textarea {
+      padding: 8px;
+    }
+  
+    button {
+      padding: 8px 0;
+    }
+  }
+  

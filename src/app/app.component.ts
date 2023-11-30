@@ -8,6 +8,8 @@ import { GptServiceService } from './gpt-service.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  estaCargando = false;
   miFormulario = new FormGroup({
     textoOriginal: new FormControl('', [Validators.required]),
     textoCambiado: new FormControl('', [Validators.required])
@@ -16,13 +18,16 @@ export class AppComponent {
   constructor(private gptService: GptServiceService) { }
 
   enviarFormulario() {
+    this.estaCargando = true;
     const textoOriginal = this.miFormulario.get('textoOriginal')?.value ?? '';
     this.gptService.cambiarTexto(textoOriginal).subscribe({
       next: (response) => {
         this.miFormulario.get('textoCambiado')?.setValue(response.respuesta);
+        this.estaCargando = false;
       },
       error: (error) => {
         console.error('Ocurrió un error:', error);
+        this.estaCargando = false;
       }
     });
   }
